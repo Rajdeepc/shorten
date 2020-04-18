@@ -22,9 +22,10 @@
     <b-form-group id="input-group-2" label="Your Password:" label-for="input-2">
       <b-form-input id="input-2" v-model="form.password" required placeholder="Enter password"></b-form-input>
     </b-form-group>
-
-    <b-button type="submit" variant="outline-success">Join Us</b-button>
-    <b-button type="reset" variant="outline-primary" >I'm already a memeber</b-button>
+    <div class="btn-container">
+      <b-button type="submit" variant="outline-success">Join Us</b-button>
+      <b-button type="reset" variant="outline-primary">I'm already a member</b-button>
+    </div>
   </b-form>
 </template>
 
@@ -42,23 +43,26 @@ export default {
     };
   },
   onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
-  },
+    evt.preventDefault();
+    alert(JSON.stringify(this.form));
+  }
 };
 </script>
-<style>
-.form-control{
-    background: transparent;
-    border-color: transparent;
-    border-bottom-color: #42663B;
-    border-radius: 0px;
-    padding-left: 0px;
+<style scoped>
+.registration-wrapper .form-control {
+  background: transparent;
+  border-color: transparent;
+  border-bottom-color: #42663b;
+  border-radius: 0px;
+  padding-left: 0px;
 }
-.form-control:focus{
-        background: transparent;
-    border-color: transparent;
-        color: #fff;
-        box-shadow: none;
+.registration-wrapper .form-control:focus {
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+.registration-wrapper .btn-container button {
+  margin-right: 15px;
 }
 </style>

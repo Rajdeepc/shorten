@@ -1,9 +1,13 @@
 <template>
-  <div class="signup-box">
+  <div class="registration-wrapper">
+    <div class="signup-box">
       <b-row>
         <b-col sm="6">
           <div class="image-box">
-            <h5> URL SHORTENER</h5>
+            <h5>URL SHORTENER</h5>
+            <div class="img-container">
+              <img src="../../assets/registration.jpg" alt=""/>
+            </div>
           </div>
         </b-col>
         <b-col sm="6">
@@ -19,20 +23,20 @@
           </div>
         </b-col>
       </b-row>
+    </div>
   </div>
 </template>
 
 <script>
-import SignUp from '../../common-components/SignUp';
-import Login from '../../common-components/Login';
+import SignUp from "../../common-components/SignUp";
+import Login from "../../common-components/Login";
 
 export default {
   name: "Registration",
-  data: function(){
-        return {
-        }
-    },
-  components:{
+  data: function() {
+    return {};
+  },
+  components: {
     SignUp,
     Login
   }
@@ -40,12 +44,30 @@ export default {
 </script>
 
 <style>
-.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
-    border-color: transparent;
+.registration-box .nav-tabs .nav-link.active,
+.registration-box .nav-tabs .nav-item.show .nav-link {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: #42663b;
+  color: #fff;
+}
+.nav-tabs {
+  margin-bottom: 30px;
+  border-bottom: 0px;
+}
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  border-color: transparent;
 }
 .nav-link {
-    color: #fff;
+  color: #fff;
 }
+.registration-wrapper {
+  background: #1a1a22;
+  height: 100%;
+  width: 100%;
+}
+
 .signup-box {
   margin: 0 auto;
   width: 800px;
@@ -57,29 +79,31 @@ export default {
   -webkit-box-shadow: 10px -5px 52px 20px rgba(21, 21, 28, 1);
   -moz-box-shadow: 10px -5px 52px 20px rgba(21, 21, 28, 1);
   box-shadow: 10px -5px 52px 20px rgba(21, 21, 28, 1);
+  height: 450px;
 }
-.registration-box, .image-box{
- padding: 20px 40px;
+.registration-box,
+.image-box {
+  padding: 20px 40px;
+  height: 450px;
 }
-.registration-box{
-  background: #23222D;
+.registration-box {
+  background: #23222d;
 }
-.image-box{
-  background: #1A1A23;
+.image-box {
+  background: #1a1a23;
   text-align: center;
 }
 .image-box h5 {
-    letter-spacing: 8.4px;
-    font-weight: 100;
+  font-weight: 100;
 }
-.nav-tabs{
-      margin-bottom: 30px;
-  border-bottom: 0px;
+.img-container {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    background-color: transparent;
-    border-color: transparent;
-    border-bottom-color: #42663B;
-    color: #fff;
+.img-container img {
+    width: 100%;
 }
+
 </style>
