@@ -11,6 +11,7 @@
         <Features></Features>
       </b-container>
     </div>
+     <Footer></Footer>
   </div>
 </template>
 
@@ -18,13 +19,15 @@
 import Navbar from "../../common-components/NavBar.vue";
 import Dashboard from "../Dashboard/Dashboard";
 import Features from "../Features/Features";
+import Footer from "../../common-components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
     Navbar,
     Dashboard,
-    Features
+    Features,
+    Footer
   }
 };
 </script>
@@ -39,7 +42,7 @@ export default {
   color: #111;
 }
 .pd20 {
-  padding: 20px;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

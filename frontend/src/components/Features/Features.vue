@@ -29,5 +29,6 @@ export default {
 <style scoped>
 .column{
     text-align: center;
+    margin-bottom: 40px;
 }
 </style>

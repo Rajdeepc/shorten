@@ -48,21 +48,22 @@ export default {
   }
 };
 </script>
-<style scoped>
-.registration-wrapper .form-control {
-  background: transparent;
-  border-color: transparent;
-  border-bottom-color: #42663b;
-  border-radius: 0px;
-  padding-left: 0px;
-}
-.registration-wrapper .form-control:focus {
-  background: transparent;
-  border-color: transparent;
-  color: #fff;
-  box-shadow: none;
-}
-.registration-wrapper .btn-container button {
+<style lang="scss">
+.registration-wrapper {
+  .form-control {
+    background: transparent;
+    border-color: transparent;
+    border-bottom-color: #42663b;
+    border-radius: 0px;
+    padding-left: 0px;
+    &:focus {
+      background: transparent;
+      color: #fff;
+      box-shadow: none;
+    }
+  }
+  .btn-container button {
   margin-right: 15px;
+}
 }
 </style>

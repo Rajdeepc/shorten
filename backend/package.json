@@ -9,7 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.9.9"
+    "bcrypt": "^3.0.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "json-find": "^2.0.4",
+    "mongoose": "^5.2.15",
+    "xoauth2": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }

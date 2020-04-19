@@ -6,7 +6,7 @@
           <div class="image-box">
             <h5>URL SHORTENER</h5>
             <div class="img-container">
-              <img src="../../assets/registration.jpg" alt=""/>
+              <img :src="registraionImg" alt=""/>
             </div>
           </div>
         </b-col>
@@ -30,11 +30,14 @@
 <script>
 import SignUp from "../../common-components/SignUp";
 import Login from "../../common-components/Login";
+import { registraionImg } from '../../assets/images';
 
 export default {
   name: "Registration",
   data: function() {
-    return {};
+    return {
+      registraionImg:registraionImg
+    };
   },
   components: {
     SignUp,
