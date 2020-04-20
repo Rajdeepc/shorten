@@ -1,10 +1,9 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset">
+  <b-form @submit="onSubmit">
     <b-form-group
       id="input-group-1"
       label="Email address:"
       label-for="input-1"
-      description="We'll never share your email with anyone else."
     >
       <b-form-input
         id="input-1"
@@ -35,6 +34,12 @@ export default {
         password: ""
       }
     };
+  },
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+    //  console.log(JSON.stringify(this.form));
+    }
   }
 };
 </script>

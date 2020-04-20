@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      isUrlShortenedSuccess: true,
+      isUrlShortenedSuccess: false,
       longUrl: "",
       shortUrl:"hiiiii",
       hasPremium: false

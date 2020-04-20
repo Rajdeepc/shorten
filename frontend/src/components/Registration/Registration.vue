@@ -100,13 +100,13 @@ export default {
   font-weight: 100;
 }
 .img-container {
-    height: 300px;
+    height: 200px;
     width: 100%;
     text-align: center;
     margin-top: 30px;
 }
 .img-container img {
-    width: 100%;
+    max-width: 100%;
 }
 
 </style>

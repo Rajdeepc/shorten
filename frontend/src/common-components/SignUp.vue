@@ -1,5 +1,5 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset">
+  <b-form @submit="onSubmit">
     <b-form-group
       id="input-group-1"
       label="Email address:"
@@ -16,11 +16,11 @@
     </b-form-group>
 
     <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-      <b-form-input id="input-2" v-model="form.name" required placeholder="Enter name"></b-form-input>
+      <b-form-input id="input-2" v-model="form.username" required placeholder="Enter name"></b-form-input>
     </b-form-group>
 
     <b-form-group id="input-group-2" label="Your Password:" label-for="input-2">
-      <b-form-input id="input-2" v-model="form.password" required placeholder="Enter password"></b-form-input>
+      <b-form-input id="input-2" v-model="form.password" type="password" required placeholder="Enter password"></b-form-input>
     </b-form-group>
     <div class="btn-container">
       <b-button type="submit" variant="outline-success">Join Us</b-button>
@@ -31,20 +31,35 @@
 
 
 <script>
+
+import Service from '../utils/api'
+
 export default {
   name: "SignUp",
   data: function() {
     return {
       form: {
         email: "",
-        name: "",
+        username: "",
         password: ""
       }
     };
   },
-  onSubmit(evt) {
-    evt.preventDefault();
-    alert(JSON.stringify(this.form));
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+     // console.log(JSON.stringify(this.form));
+
+      // call save api
+      Service.registerUser(this.form)
+      .then(response => {
+        console.log("Response from sign up api" + response)
+      })
+      .catch(err => {
+        throw err
+      })
+
+    }
   }
 };
 </script>
@@ -63,7 +78,7 @@ export default {
     }
   }
   .btn-container button {
-  margin-right: 15px;
-}
+    margin-right: 15px;
+  }
 }
 </style>
