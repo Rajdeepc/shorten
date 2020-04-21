@@ -11,8 +11,8 @@
         </b-input-group-append>
       </b-input-group>
       <p>
-        ShortURL.at is a free tool to shorten a URL or reduce a link.
-        Use our URL Shortener to create a shortened link making it easy to remember.
+        Url Shortener is a free tool to shorten a URL.
+        Use URL Shortener to create a shortened link and use it anywhere.
       </p>
     </div>
 
@@ -36,7 +36,7 @@
         <div>
           <h2>Want More? Try Premium Features!</h2>
         </div>
-        <p>Custom short links, powerful dashboard, detailed analytics, API, UTM builder, QR codes, browser extension, 50+ app integrations and support. Only $9/month.</p>
+        <p>Custom short links, API, UTM builder, QR codes .Only $9/month.</p>
         <b-button variant="primary">Get Premium</b-button>
       </div>
     </div>
@@ -55,7 +55,7 @@ export default {
     return {
       isUrlShortenedSuccess: false,
       longUrl: "",
-      shortUrl:"hiiiii",
+      shortUrl:"",
       hasPremium: false
     };
   },

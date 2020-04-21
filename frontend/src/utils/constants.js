@@ -10,31 +10,31 @@ const Features = [
     {
         id:1,
         title: 'Easy',
-        desc:'ShortURL is easy and fast, enter the long link to get your shortened link',
+        desc:'Url Shortener is easy and fast and effective way to shorten your long urls',
         img:easyImge
     },
     {
         id:2,
         title: 'Shortened',
-        desc:'Use any link, no matter what size, ShortURL always shortens',
+        desc:'Any links can be shortener with our powerful algorithms',
         img:shortImge
     },
     {
         id:3,
         title: 'Secure',
-        desc:'It is fast and secure, our service have HTTPS protocol and data encryption',
+        desc:'With high level encryption your urls are always safe and secure with https',
         img:secureImge
     },
     {
         id:4,
         title: 'Statistics',
-        desc:'Check the amount of clicks that your shortened url received',
+        desc:'You can see stats on how many users have used your shortened url',
         img:statisticsImge
     },
     {
         id:5,
         title: 'Reliable',
-        desc:'All links that try to disseminate spam, viruses and malware are deleted',
+        desc:'We delete any links which is a potential threat to malware or viruses',
         img:reliableImg
     },
     {
