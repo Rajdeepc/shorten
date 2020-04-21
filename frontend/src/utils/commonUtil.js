@@ -8,6 +8,7 @@ const targetElementById = (id) => {
   return textBox
 }
 
+
 export default {
   copyToClipBoard,
   targetElementById

@@ -9,6 +9,7 @@ import Routes from './routes'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueRouter)
+
 Vue.config.productionTip = false
 
 const routes = Routes
