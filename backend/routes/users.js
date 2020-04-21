@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const { User, validate } = require('../models/users');
 const express = require('express');
 const router = express.Router();
@@ -23,6 +24,8 @@ if(user){
         username: req.body.username,
         password:req.body.password
     });
+    const salt = await bcrypt.genSalt(10); // generating a salt
+    user.password = await bcrypt.hash(user.password, salt);// encrypting user password before saving it to db
     await user.save();
     res.status(200).send(user);
 }

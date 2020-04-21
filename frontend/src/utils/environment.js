@@ -48,7 +48,7 @@ const BASE_URL = getEnvironMentConfig(DEFAULT_ENV);
 
 const API_ENDPOINTS = {
   signup: "/users",
-  signin: "/signin",
+  signin: "/auth",
   getProfile: "/getProfile",
   getShortUrl: "/getShortUrl",
 };

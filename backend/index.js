@@ -1,19 +1,29 @@
+const config = require('config');
 const Joi = require('@hapi/joi');
 Joi.objectId = require('joi-objectid')(Joi);
 const express = require('express');
 const mongoose = require('mongoose');
-var cors = require("cors");
-
-const app = express();
-
 // routes
 const users = require('./routes/users');
+const auth = require('./routes/auth');
+const cors = require("cors");
+const app = express();
+
+if (!config.get('PrivateKey')) {
+    console.error('FATAL ERROR: PrivateKey is not defined.');
+    process.exit(1);
+}
+
+
+
 
 
 // middlewares
 app.use(cors());
 app.use(express.json());
 app.use('/users', users);
+app.use('/auth', auth);
+
 
 
 // MongoDB connection string
