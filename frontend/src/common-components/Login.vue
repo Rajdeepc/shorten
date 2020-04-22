@@ -57,11 +57,11 @@ export default {
         })
         .catch(err => {
           if (err) {
-            this.makeToast(true, "Sign In Failed", "danger", false);
+            this.makeToast(true, err, "Sign In Failed", false);
           }
         });
       } catch(e) {
-        this.makeToast(true, e, "danger", false);
+        this.makeToast(true, e, "Sign In Failed", false);
       }
     },
     setSession(userSessionObj){

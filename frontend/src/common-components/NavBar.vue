@@ -27,7 +27,7 @@ export default {
   },
   mounted(){
     const userData = JSON.parse(sessionStorage.getItem('user'));
-    if(userData.authToken){
+    if(userData && userData.authToken){
       this.isLoggedIn = true
     }
   },
