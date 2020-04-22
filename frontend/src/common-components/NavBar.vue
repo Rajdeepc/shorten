@@ -9,7 +9,7 @@
 
       <b-button-group v-show="isLoggedIn">
         <b-button to = '/profile' variant="primary">My Profile</b-button>
-        <b-button to = '/' variant="danger">Log Out</b-button>
+        <b-button to = '/' variant="danger" @click="logOut">Log Out</b-button>
       </b-button-group>
 
 
@@ -23,6 +23,18 @@ export default {
   data(){
     return {
       isLoggedIn: false
+    }
+  },
+  mounted(){
+    const userData = JSON.parse(sessionStorage.getItem('user'));
+    if(userData.authToken){
+      this.isLoggedIn = true
+    }
+  },
+  methods:{
+    logOut(){
+      sessionStorage.removeItem('user');
+      this.isLoggedIn = false
     }
   }
 };

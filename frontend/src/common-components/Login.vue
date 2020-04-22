@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import Service from "../utils/api";
+
 export default {
   name: "Login",
   data: function() {
@@ -32,13 +34,46 @@ export default {
       form: {
         email: "",
         password: ""
-      }
+      },
+      notificationMsg: "",
+      messageType: "",
+      showToast: true
     };
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-    //  console.log(JSON.stringify(this.form));
+      try {
+       Service.loginUser(this.form)
+        .then(response => {
+          if (response.success) {
+            let userSession = {
+              'emailId' : response.email,
+              'authToken' : response.token
+            }
+            this.setSession(userSession);
+            this.$router.push({ path: '/' })
+          }
+        })
+        .catch(err => {
+          if (err) {
+            this.makeToast(true, "Sign In Failed", "danger", false);
+          }
+        });
+      } catch(e) {
+        this.makeToast(true, e, "danger", false);
+      }
+    },
+    setSession(userSessionObj){
+      sessionStorage.setItem('user', JSON.stringify(userSessionObj))
+    },
+    makeToast(append = false, toastMsg, toastTitle, isSuccess) {
+      this.$bvToast.toast(`${toastMsg}`, {
+        title: toastTitle,
+        autoHideDelay: 2000,
+        appendToast: append,
+        variant: isSuccess ? "success" : "danger"
+      });
     }
   }
 };

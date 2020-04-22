@@ -27,7 +27,7 @@ router.post('/', async (req,res) => {
     }
     // generating a unique jwt token
     const token = jwt.sign({_id:user._id}, config.get('PrivateKey'));
-    res.send(token)
+    res.send({token : token, success: true, email: req.body.email})
 
 });
 
