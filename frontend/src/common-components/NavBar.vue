@@ -4,7 +4,6 @@
     <b-navbar-nav class="ml-auto">
       <b-button-group v-show="!isLoggedIn">
         <b-button to = '/registration' variant="primary">Sign In</b-button>
-        <b-button to = '/registration' variant="success">Sign Up</b-button>
       </b-button-group>
 
       <b-button-group v-show="isLoggedIn">

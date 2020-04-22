@@ -35,7 +35,21 @@ const loginUser = (obj) => {
 }
 
 
+const shrinkLongUrl = (email,urlToShrink) => {
+    const body = {
+        email: email,
+        longUrl: urlToShrink
+    }
+    const url = BASE_URL + API_ENDPOINTS.shrinkUrl;
+    return axios.post(url,body)
+    .then(response => {
+        return response.data
+    })
+}
+
+
 export default {
     registerUser,
-    loginUser
+    loginUser,
+    shrinkLongUrl
 }

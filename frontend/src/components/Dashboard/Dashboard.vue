@@ -5,9 +5,9 @@
         <h2>Paste the URL to be shortened</h2>
       </div>
       <b-input-group class="mt-3">
-        <b-form-input></b-form-input>
+        <b-form-input id="input-shrink" v-model="longUrl"></b-form-input>
         <b-input-group-append>
-          <b-button variant="info">Shrink</b-button>
+          <b-button variant="info" @click="shrink(longUrl)">Shrink</b-button>
         </b-input-group-append>
       </b-input-group>
       <p>
@@ -45,6 +45,8 @@
 <script>
 import ShareComponent from "../../common-components/ShareComponent";
 import commonUtil from '../../utils/commonUtil';
+import Service from "../../utils/api";
+
 
 export default {
   name: "Dashboard",
@@ -61,7 +63,25 @@ export default {
   },
   methods :{
     copyToClip: commonUtil.copyToClipBoard,
-    targetElementById: commonUtil.targetElementById
+    targetElementById: commonUtil.targetElementById,
+    shrink(url){
+      Service.shrinkLongUrl(url, email = '') // can use global store with vuex
+      .then(response => {
+        if(response.success){
+          this.isUrlShortenedSuccess = true
+        }
+      }).catch(err => {
+        this.makeToast(true, err, "Failed. Try Again", false);
+      })
+    },
+    makeToast(append = false, toastMsg, toastTitle, isSuccess) {
+      this.$bvToast.toast(`${toastMsg}`, {
+        title: toastTitle,
+        autoHideDelay: 2000,
+        appendToast: append,
+        variant: isSuccess ? "success" : "danger"
+      });
+    }
   }
 };
 </script>
@@ -72,6 +92,12 @@ export default {
     font-size: 11px;
     color: #fafafa;
     opacity: 0.4;
+  }
+  #input-shrink{
+    height:50px
+  }
+  .input-group-append button {
+    width:100px
   }
 }
 .premium-features {

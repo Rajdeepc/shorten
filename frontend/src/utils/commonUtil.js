@@ -8,8 +8,18 @@ const targetElementById = (id) => {
   return textBox
 }
 
+const setValueToSessionStorage = (keyName, userSessionObj) => {
+  sessionStorage.setItem(keyName, JSON.stringify(userSessionObj))
+}
+
+const getValueFromSession = (key) => {
+  const sessionData = JSON.parse(sessionStorage.getItem(key));
+  return sessionData
+}
 
 export default {
   copyToClipBoard,
-  targetElementById
+  targetElementById,
+  setValueToSessionStorage,
+  getValueFromSession
 }

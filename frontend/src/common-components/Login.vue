@@ -15,7 +15,7 @@
     </b-form-group>
 
     <b-form-group id="input-group-2" label="Your Password:" label-for="input-2">
-      <b-form-input id="input-2" v-model="form.password" required placeholder="Enter Password"></b-form-input>
+      <b-form-input id="input-2" v-model="form.password" type="password" required placeholder="Enter Password"></b-form-input>
     </b-form-group>
     <div class="btn-container">
       <b-button type="submit" variant="outline-primary">Submit</b-button>

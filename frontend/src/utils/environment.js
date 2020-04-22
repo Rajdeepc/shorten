@@ -50,7 +50,7 @@ const API_ENDPOINTS = {
   signup: "/users",
   signin: "/auth",
   getProfile: "/getProfile",
-  getShortUrl: "/getShortUrl",
+  shrinkUrl: "/shrinkUrl",
 };
 
 export { BASE_URL, API_ENDPOINTS };
