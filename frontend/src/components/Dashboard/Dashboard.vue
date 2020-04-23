@@ -28,6 +28,7 @@
         </b-input-group-append>
       </b-input-group>
       <p>Long Url - {{longUrl}}</p>
+      <a :href="longUrl" target="_blank">{{shortUrl}}</a>
       <!-- share component -->
       <div>
         <ShareComponent url />
@@ -58,14 +59,21 @@ export default {
       isUrlShortenedSuccess: false,
       longUrl: "",
       shortUrl:"",
-      hasPremium: false
+      hasPremium: false,
+      email:''
     };
+  },
+  mounted(){
+    const sessionData = JSON.parse(sessionStorage.getItem('user'))
+    if(sessionData && sessionData.emailId && sessionData.authToken){
+        this.email = sessionData.emailId
+    }
   },
   methods :{
     copyToClip: commonUtil.copyToClipBoard,
     targetElementById: commonUtil.targetElementById,
     shrink(url){
-      Service.shrinkLongUrl(url) // can use global store with vuex
+      Service.shrinkLongUrl(url,this.email) // can use global store with vuex
       .then(response => {
         if(response.success){
           this.isUrlShortenedSuccess = true;
@@ -94,7 +102,7 @@ export default {
     color: #fafafa;
     opacity: 0.4;
   }
-  #input-shrink{
+  #input-shrink,#shortUrlGet{
     height:50px
   }
   .input-group-append button {

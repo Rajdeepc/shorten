@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const shrinkUrl = require('./routes/shrinkUrl');
+const shortUrl = require('./routes/shortUrl');
 
 
 const cors = require("cors");
@@ -27,6 +28,8 @@ app.use(express.json());
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/shrinkUrl', shrinkUrl);
+app.use('/shortUrl', shortUrl);
+
 
 
 

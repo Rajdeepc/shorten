@@ -12,13 +12,17 @@ if(url){
 } else {
     // INSERT into db
     shrinkUrl = new ShrinkUrl ({
+        email: req.body.email,
         longUrl: req.body.longUrl,
         shortUrl: req.body.shortUrl,
         createdAt: Date.now(),
         clicks: req.body.clicks
     });
-    await shrinkUrl.save();
+    if(req.body.email){
+        await shrinkUrl.save();
+    } 
     res.status(200).send({ shrinkUrl: shrinkUrl,success: true});
+    
 }
 });
 

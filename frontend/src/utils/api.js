@@ -35,8 +35,9 @@ const loginUser = (obj) => {
 }
 
 
-const shrinkLongUrl = (urlToShrink) => {
+const shrinkLongUrl = (urlToShrink,email) => {
     const body = {
+        email:email,
         longUrl: urlToShrink
     }
     const url = BASE_URL + API_ENDPOINTS.shrinkUrl;
@@ -45,6 +46,7 @@ const shrinkLongUrl = (urlToShrink) => {
         return response.data
     })
 }
+
 
 
 export default {

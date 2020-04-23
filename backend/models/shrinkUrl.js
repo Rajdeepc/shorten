@@ -3,6 +3,10 @@ const shortId = require('shortid');
 
 
 const ShrinkUrl = mongoose.model('ShrinkUrl', new mongoose.Schema({
+    email:{
+        type: String,
+        required: false
+    },
     longUrl: {
         type: String,
         required: true
