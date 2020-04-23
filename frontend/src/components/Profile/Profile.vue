@@ -29,7 +29,7 @@ export default {
       getMyProfileData(emailId){
           Service.getMyProfileData(emailId)
           .then(response => {
-              this.myProfileData = response.profileData
+              this.myProfileData = response
           }).catch((e) => {
               throw e
           })

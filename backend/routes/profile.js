@@ -4,9 +4,9 @@ const { ShrinkUrl } = require("../models/shrinkUrl");
 
 
 router.get('/:email', async (req,res) => {
-    const profileByEmail = await ShrinkUrl.findOne({ email: req.params.email });
+    const profileByEmail = await ShrinkUrl.find({ email: req.params.email });
     if(profileByEmail){
-        res.status(200).send({profileData: profileByEmail})
+        res.status(200).json(profileByEmail)
     }
 })
 
