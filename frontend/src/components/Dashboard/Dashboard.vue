@@ -65,10 +65,11 @@ export default {
     copyToClip: commonUtil.copyToClipBoard,
     targetElementById: commonUtil.targetElementById,
     shrink(url){
-      Service.shrinkLongUrl(url, email = '') // can use global store with vuex
+      Service.shrinkLongUrl(url) // can use global store with vuex
       .then(response => {
         if(response.success){
-          this.isUrlShortenedSuccess = true
+          this.isUrlShortenedSuccess = true;
+          this.shortUrl = response.shrinkUrl.shortUrl
         }
       }).catch(err => {
         this.makeToast(true, err, "Failed. Try Again", false);

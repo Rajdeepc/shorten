@@ -21,6 +21,7 @@
     "json-find": "^2.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.2.15",
+    "shortid": "^2.2.15",
     "xoauth2": "^1.2.0"
   },
   "devDependencies": {
