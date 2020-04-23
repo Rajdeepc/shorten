@@ -47,10 +47,19 @@ const shrinkLongUrl = (urlToShrink,email) => {
     })
 }
 
+const getMyProfileData = (email) => {
+    const url = BASE_URL + API_ENDPOINTS.getProfile + "/" + email;
+    return axios.get(url)
+    .then(response => {
+        return response.data
+    })
+}
+
 
 
 export default {
     registerUser,
     loginUser,
-    shrinkLongUrl
+    shrinkLongUrl,
+    getMyProfileData
 }

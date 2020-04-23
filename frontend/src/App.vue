@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-     <router-view></router-view>
+     <Navbar/>
+        <div class="main-container">
+        <router-view></router-view>
+        </div>
+     <Footer/>
   </div>
 </template>
 
 <script>
+import Navbar from "./common-components/NavBar";
+import Footer from "./common-components/Footer";
 
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    Navbar,
+    Footer
+  }
 }
 </script>
 
@@ -17,5 +27,8 @@ export default {
   color: #fff;
   width:100%;
   height:100vh;
+}
+.main-container{
+  min-height: calc(100vh - 106px);
 }
 </style>

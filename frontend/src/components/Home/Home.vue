@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar></Navbar>
     <div id="dashbaord" class="pd20">
       <b-container>
         <Dashboard></Dashboard>
@@ -11,23 +10,18 @@
         <Features></Features>
       </b-container>
     </div>
-     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Navbar from "../../common-components/NavBar.vue";
 import Dashboard from "../Dashboard/Dashboard";
 import Features from "../Features/Features";
-import Footer from "../../common-components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
-    Navbar,
     Dashboard,
-    Features,
-    Footer
+    Features
   }
 };
 </script>

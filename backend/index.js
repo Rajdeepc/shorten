@@ -8,6 +8,7 @@ const users = require('./routes/users');
 const auth = require('./routes/auth');
 const shrinkUrl = require('./routes/shrinkUrl');
 const shortUrl = require('./routes/shortUrl');
+const profile = require('./routes/profile');
 
 
 const cors = require("cors");
@@ -29,6 +30,7 @@ app.use('/users', users);
 app.use('/auth', auth);
 app.use('/shrinkUrl', shrinkUrl);
 app.use('/shortUrl', shortUrl);
+app.use('/getProfile', profile);
 
 
 
