@@ -25,6 +25,7 @@ if (!config.get('PrivateKey')) {
 
 // middlewares
 app.use(cors());
+app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use('/users', users);
 app.use('/auth', auth);
@@ -33,15 +34,14 @@ app.use('/shortUrl', shortUrl);
 app.use('/getProfile', profile);
 
 
-
+// Serve static files assets on heroku
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/dist'))
+}
 
 // MongoDB connection string
 
-mongoose.connect('mongodb://localhost:27017/urlshortener',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://ds259105.mlab.com:59105/urlshortener',{user: process.env.MONGODB_USER, pass: process.env.MONGODB_PASS})
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
 
