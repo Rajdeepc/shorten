@@ -12,9 +12,15 @@ const isAuthenticated = () => {
 }
 
 const Routes = [
-    { path: '/', component: Home},
-    { path: '/profile', component: Profile },
-    { path: '/registration', component: Registration , beforeEnter :(to,from,next) => {
+    { name:'home', path: '/', component: Home},
+    { name:'profile', path: '/profile', component: Profile ,beforeEnter :(to,from,next) => {
+      if(to.path === '/profile' && !isAuthenticated()){
+        next({path: '/',replace: true})
+      } else {
+        next()
+      }
+    } },
+    { name:'registration', path: '/registration', component: Registration , beforeEnter :(to,from,next) => {
       if(to.path === '/registration' && isAuthenticated()){
         next({path: '/',replace: true})
       } else {

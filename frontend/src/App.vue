@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-     <Navbar/>
-        <div class="main-container">
-        <router-view></router-view>
-        </div>
-     <Footer/>
+    <Navbar v-show="['home','profile'].includes(this.$route.name)" />
+    <div class="main-container">
+      <router-view :key="$route.fullPath"></router-view>
+    </div>
+    <Footer v-show="['home','profile'].includes(this.$route.name)" />
   </div>
 </template>
 
@@ -13,22 +13,30 @@ import Navbar from "./common-components/NavBar";
 import Footer from "./common-components/Footer";
 
 export default {
-  name: 'app',
-  components:{
+  name: "app",
+  data() {
+    return {
+      hideNavFooter: false
+    };
+  },
+  mounted(){
+    console.log(this.$route.name)
+  },
+  components: {
     Navbar,
     Footer
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #fff;
-  width:100%;
-  height:100vh;
+  width: 100%;
+  height: 100vh;
 }
-.main-container{
+.main-container {
   min-height: calc(100vh - 106px);
 }
 </style>

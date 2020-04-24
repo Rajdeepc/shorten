@@ -67,7 +67,7 @@ export default {
 }
 .registration-wrapper {
   background: #1a1a22;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
