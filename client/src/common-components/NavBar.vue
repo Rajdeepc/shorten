@@ -26,7 +26,7 @@ export default {
     this.changeNavButtons();
   },
   watch: {
-    $route: "changeNavButtons"
+    $route: "changeNavButtons" // watching for changes in route and update
   },
   methods: {
     changeNavButtons() {

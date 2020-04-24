@@ -3,7 +3,7 @@
 A full E2E application to shorten your urls and save it on your profile. It gives you flexibity to choose your domain names, or build custom urls in paid version. The trial is free to use and you canshorten unlimited number of urls.
 
 ### Work In Progress
-![WIP](student.png)
+![WIP](./github/student.png)
 
 ### Getting Started
 To get you started you can simply clone the repository:
@@ -69,18 +69,18 @@ nodemon index.js (install npm  install nodemon -g)
 
 ## Contributing
 
-Please follow the [Contributing](CONTRIBUTING.md) guidelines to open a pull request
+Please follow the [Contributing](./github/CONTRIBUTING.md) guidelines to open a pull request
 
 ### Some Glimpses:
 
 ## Login Page
-![Home Page](loginurlpng.png)
+![Home Page](./github/loginurlpng.png)
 
 ## Dashboard Page
-![Dashboard Page](urldash.png)
+![Dashboard Page](./github/urldash.png)
 
 
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](./github/LICENSE.md) file for details
