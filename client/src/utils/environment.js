@@ -1,4 +1,4 @@
-const DEFAULT_ENV = "dev";
+const DEFAULT_ENV = "prod";
 
 /**
  * Environments
@@ -9,12 +9,12 @@ const Environments = {
     port: 4000,
   },
   "itg": {
-    url: "",
-    port: undefined,
+    url: "https://dashboard.heroku.com/",
+    port: process.env.PORT,
   },
   "prod": {
-    url: "",
-    port: undefined,
+    url: "https://dashboard.heroku.com/",
+    port: process.env.PORT,
   },
 };
 
