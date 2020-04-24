@@ -1,7 +1,12 @@
 <template>
   <div>
     <b-container>
-      <b-table striped hover :items="myProfileData"></b-table>
+      <b-table striped hover :items="myProfileData" :fields="fields">
+        <template v-slot:cell(shortUrl)="row">
+        <span>{{row.shortUrl}}</span>
+        <a :href="row.item.longUrl" target="_blank">{{ row.item.shortUrl }}</a>
+      </template>
+      </b-table>
     </b-container>
   </div>
 </template>
@@ -15,7 +20,29 @@ export default {
   data() {
     return {
       myProfileData: [],
-      email:''
+      email:'',
+      fields: [
+          {
+            key: 'longUrl',
+            sortable: false
+          },
+          {
+            key: 'shortUrl',
+            sortable: false,
+            label: 'Short Url' 
+          },
+          {
+            key: 'clicks',
+            label: 'Clicks'
+          },
+          {
+            key:'createdAt',
+            sortable:true,
+            formatter: (value, key, item) => {
+              return new Date(item.createdAt)
+            }
+          }
+        ],
     };
   },
   mounted(){
