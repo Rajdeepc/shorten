@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar v-show="['home','profile'].includes(this.$route.name)" />
     <div class="main-container">
-      <router-view :key="$route.fullPath"></router-view>
+      <router-view :key="$route.path"></router-view>
     </div>
     <Footer v-show="['home','profile'].includes(this.$route.name)" />
   </div>
@@ -18,9 +18,6 @@ export default {
     return {
       hideNavFooter: false
     };
-  },
-  mounted(){
-    console.log(this.$route.name)
   },
   components: {
     Navbar,
