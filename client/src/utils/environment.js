@@ -1,4 +1,4 @@
-const DEFAULT_ENV = "prod";
+const DEFAULT_ENV = "dev";
 
 /**
  * Environments
@@ -31,7 +31,7 @@ const getEnvironMentConfig = (env) => {
     case "itg":
       url = Environments[env].url + ":" +  Environments[env].port;
       break;
-    case "prod":
+    case "production":
       url = Environments[env].url + ":" +  Environments[env].port;
       break;
     default:
