@@ -40,7 +40,7 @@ const getEnvironMentConfig = (env) => {
   return url;
 };
 
-const BASE_URL = getEnvironMentConfig(DEFAULT_ENV);
+const BASE_URL = getEnvironMentConfig(process.env.NODE_ENV || DEFAULT_ENV);
 
 /**
  * List of API endpoints
