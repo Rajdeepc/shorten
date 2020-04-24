@@ -47,9 +47,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://ds259105.mlab.com:59105/u
 
 
 /** starting route */
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 
 const port = process.env.PORT || 4000;
