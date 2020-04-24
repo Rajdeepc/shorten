@@ -3,6 +3,8 @@ const Joi = require('@hapi/joi');
 Joi.objectId = require('joi-objectid')(Joi);
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
+
 // routes
 const users = require('./routes/users');
 const auth = require('./routes/auth');
