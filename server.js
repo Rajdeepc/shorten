@@ -38,7 +38,7 @@ app.use('/getProfile', profile);
 
 // Serve static files assets on heroku
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/dist/urlshortener'))
+    app.use(express.static('client/dist'))
 }
 
 // MongoDB connection string
