@@ -38,7 +38,7 @@ app.use('/getProfile', profile);
 
 // Serve static files assets on heroku
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/dist'))
+    app.use(express.static('client/dist/urlshortener'))
 }
 
 // MongoDB connection string
@@ -46,13 +46,6 @@ if(process.env.NODE_ENV === 'production'){
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://ds259105.mlab.com:59105/urlshortener',{user: process.env.MONGODB_USER, pass: process.env.MONGODB_PASS})
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
-
-
-/** starting route */
-app.get("/", (req, res) => {
-    const index = path.join(__dirname, 'dist', 'index.html');
-  res.sendFile(index);
-});
 
 
 const port = process.env.PORT || 4000;
