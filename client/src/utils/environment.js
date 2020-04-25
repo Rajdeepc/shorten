@@ -1,10 +1,10 @@
-const DEFAULT_ENV = "dev";
+const DEFAULT_ENV = "development";
 
 /**
  * Environments
  */
 const Environments = {
-  "dev": {
+  "development": {
     url: "http://localhost",
     port: 4000,
   },
@@ -12,7 +12,7 @@ const Environments = {
     url: "https://dashboard.heroku.com/",
     port: process.env.PORT,
   },
-  "prod": {
+  "production": {
     url: "https://dashboard.heroku.com/",
     port: process.env.PORT,
   },
@@ -25,7 +25,7 @@ const Environments = {
 const getEnvironMentConfig = (env) => {
   let url = "";
   switch (env) {
-    case "dev":
+    case "development":
       url = Environments[env].url + ":" + Environments[env].port;
       break;
     case "itg":
@@ -40,6 +40,7 @@ const getEnvironMentConfig = (env) => {
   return url;
 };
 
+console.log(process.env.NODE_ENV)
 const BASE_URL = getEnvironMentConfig(process.env.NODE_ENV || DEFAULT_ENV);
 
 /**

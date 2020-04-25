@@ -18,7 +18,7 @@ const ShrinkUrl = mongoose.model('ShrinkUrl', new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        required: true,
+        required: false,
     },
     clicks: {
         type: Number,

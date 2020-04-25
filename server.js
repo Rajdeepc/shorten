@@ -43,11 +43,11 @@ if(process.env.NODE_ENV === 'production'){
 
 // MongoDB connection string
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://ds259105.mlab.com:59105/urlshortener',{user: process.env.MONGODB_USER, pass: process.env.MONGODB_PASS})
+mongoose.connect('mongodb://user:Ria123@ds341837.mlab.com:41837/urlshortener')
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
 
-
+console.log("port" + process.env.PORT)
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 
