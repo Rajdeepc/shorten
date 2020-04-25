@@ -4,6 +4,8 @@ Joi.objectId = require('joi-objectid')(Joi);
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config();
 
 // routes
 const users = require('./routes/users');
@@ -42,8 +44,8 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 // MongoDB connection string
-
-mongoose.connect(process.env.MONGOLAB_URI || `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@ds341837.mlab.com:41837/urlshortener`)
+const MONGO_LOCAL_URI = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@ds341837.mlab.com:41837/urlshortener`;
+mongoose.connect(process.env.MONGOLAB_URI || MONGO_LOCAL_URI)
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
 
