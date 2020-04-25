@@ -10,11 +10,11 @@ const Environments = {
   },
   "itg": {
     url: "https://dashboard.heroku.com/",
-    port: process.env.PORT,
+    port: 4000,
   },
   "production": {
     url: "https://dashboard.heroku.com/",
-    port: process.env.PORT,
+    port: 4000,
   },
 };
 
@@ -40,7 +40,6 @@ const getEnvironMentConfig = (env) => {
   return url;
 };
 
-console.log(process.env.NODE_ENV)
 const BASE_URL = getEnvironMentConfig(process.env.NODE_ENV || DEFAULT_ENV);
 
 /**
