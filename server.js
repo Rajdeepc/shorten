@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
 
 // MongoDB connection string
 
-mongoose.connect('mongodb://user:Ria123@ds341837.mlab.com:41837/urlshortener')
+mongoose.connect(process.env.MONGOLAB_URI || `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@ds341837.mlab.com:41837/urlshortener`)
 .then(() => console.log("New connection established"))
 .catch(err => console.log('Something went wrong' + err))
 
