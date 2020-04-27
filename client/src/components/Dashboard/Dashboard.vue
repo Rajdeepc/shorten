@@ -22,16 +22,16 @@
         <h2>Copy the URL</h2>
       </div>
       <b-input-group class="mt-3">
-        <b-form-input v-model="shortUrl" id="shortUrlGet"></b-form-input>
+        <b-form-input v-model="shortUri" id="shortUrlGet"></b-form-input>
         <b-input-group-append>
           <b-button variant="info" @click="copyToClip(targetElementById('shortUrlGet'))">Copy</b-button>
         </b-input-group-append>
       </b-input-group>
       <p>Long Url - {{longUrl}}</p>
-      <a :href="longUrl" target="_blank">{{shortUrl}}</a>
+      <!-- <a :href="shortUri" target="_blank">{{shortUri}}</a> -->
       <!-- share component -->
       <div>
-        <ShareComponent url />
+        <ShareComponent :url="shortUri" />
       </div>
       <div class="premium-features text-center" v-show="!hasPremium">
         <div>
@@ -58,10 +58,11 @@ export default {
     return {
       isUrlShortenedSuccess: false,
       longUrl: "",
-      shortUrl:"",
+      shortUri:'',
+      shortUrlFromDB:"",
       hasPremium: false,
       email:''
-    };
+    }
   },
   mounted(){
     const sessionData = JSON.parse(sessionStorage.getItem('user'))
@@ -77,7 +78,8 @@ export default {
       .then(response => {
         if(response.success){
           this.isUrlShortenedSuccess = true;
-          this.shortUrl = response.shrinkUrl.shortUrl
+          this.shortUrlFromDB = response.shrinkUrl.shortUrl
+          this.shortUri = window.location.href + this.shortUrlFromDB
         }
       }).catch(err => {
         this.makeToast(true, err, "Failed. Try Again", false);

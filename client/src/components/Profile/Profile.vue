@@ -37,10 +37,6 @@ export default {
           label: "Short Url"
         },
         {
-          key: "clicks",
-          label: "Clicks"
-        },
-        {
           key: "createdAt",
           sortable: true,
           formatter: (value, key, item) => {

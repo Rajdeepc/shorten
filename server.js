@@ -5,6 +5,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require('dotenv');
+const router = express.Router();
+
+
+const { ShrinkUrl } = require('./models/shrinkUrl');
+
 dotenv.config();
 
 // routes
@@ -34,9 +39,7 @@ app.use(express.json());
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/shrinkUrl', shrinkUrl);
-app.use('/shortUrl', shortUrl);
 app.use('/getProfile', profile);
-
 
 // Serve static files assets on heroku
 if(process.env.NODE_ENV === 'production'){
