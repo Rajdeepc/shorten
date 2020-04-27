@@ -30,8 +30,6 @@ const app = express();
 
 
 
-
-
 // middlewares
 app.use(cors());
 app.use(express.urlencoded({extended: true}))
@@ -43,7 +41,7 @@ app.use('/getProfile', profile);
 
 // Serve static files assets on heroku
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/dist'))
+    app.use((path.join(__dirname, "client", "dist")))
 }
 
 // MongoDB connection string
@@ -54,5 +52,9 @@ mongoose.connect(process.env.MONGOLAB_URI || MONGO_LOCAL_URI)
 
 console.log("port" + process.env.PORT)
 const port = process.env.PORT || 4000;
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 
