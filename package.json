@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd client && yarn --only=dev && yarn && yarn build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "author": "",
+  "author": "Rajdeep Chandra",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  }
+  },
+  "engines": {
+    "node": "10.16.0"
+}
 }
