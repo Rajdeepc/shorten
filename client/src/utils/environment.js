@@ -9,12 +9,10 @@ const Environments = {
     port: 4000,
   },
   "itg": {
-    url: "https://dashboard.heroku.com/",
-    port: 44263,
+    url: "https://dashboard.heroku.com/"
   },
   "production": {
-    url: "https://dashboard.heroku.com/",
-    port: 44263,
+    url: "https://dashboard.heroku.com/"
   },
 };
 
@@ -29,10 +27,10 @@ const getEnvironMentConfig = (env) => {
       url = Environments[env].url + ":" + Environments[env].port;
       break;
     case "itg":
-      url = Environments[env].url + ":" +  Environments[env].port;
+      url = Environments[env].url;
       break;
     case "production":
-      url = Environments[env].url + ":" +  Environments[env].port;
+      url = Environments[env].url;
       break;
     default:
       url = "";
