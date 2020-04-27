@@ -9,10 +9,10 @@ const Environments = {
     port: 4000,
   },
   "itg": {
-    url: "https://dashboard.heroku.com/"
+    url: "https://dashboard.heroku.com"
   },
   "production": {
-    url: "https://dashboard.heroku.com/"
+    url: "https://dashboard.heroku.com"
   },
 };
 
