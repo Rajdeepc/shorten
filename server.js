@@ -5,8 +5,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require('dotenv');
-const router = express.Router();
-
+const cors = require("cors");
+const app = express();
 
 const { ShrinkUrl } = require('./models/shrinkUrl');
 
@@ -20,8 +20,7 @@ const shortUrl = require('./routes/shortUrl');
 const profile = require('./routes/profile');
 
 
-const cors = require("cors");
-const app = express();
+
 
 // if (!config.get('PrivateKey')) {
 //     console.error('FATAL ERROR: PrivateKey is not defined.');
@@ -53,7 +52,7 @@ mongoose.connect(process.env.MONGOLAB_URI || MONGO_LOCAL_URI)
 console.log("port" + process.env.PORT)
 const port = process.env.PORT || 4000;
 // Right before your app.listen(), add this:
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 app.listen(port, () => console.log(`Listening on port ${port}...`));
