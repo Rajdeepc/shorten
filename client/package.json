@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint",
     "start": "node server.js"
   },
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
