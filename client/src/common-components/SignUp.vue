@@ -31,7 +31,7 @@
       </b-form-group>
       <div class="btn-container">
         <b-button type="submit" variant="outline-success">Join Us</b-button>
-        <b-button type="reset" variant="outline-primary">I'm already a member</b-button>
+        <b-button type="reset" variant="outline-primary">Clear</b-button>
       </div>
     </b-form>
   </div>
