@@ -9,11 +9,11 @@ const Environments = {
     port: 4000,
   },
   "itg": {
-    url: "https://razorurl.herokuapp.com/",
+    url: "https://razorurl.herokuapp.com",
     port: 5000,
   },
   "production": {
-    url: "https://razorurl.herokuapp.com/",
+    url: "https://razorurl.herokuapp.com",
     port: 5000,
   },
 };
