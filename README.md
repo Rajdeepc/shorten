@@ -2,8 +2,6 @@
 
 A full E2E application to shorten your urls and save it on your profile. It gives you flexibity to choose your domain names, or build custom urls in paid version. The trial is free to use and you canshorten unlimited number of urls.
 
-![URL Shortener](./github/registration.png)
-
 ### See It Live
 [Working Demo](https://razorurl.herokuapp.com/)
 
