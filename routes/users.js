@@ -10,13 +10,13 @@ router.post('/', async (req,res) => {
 const error = validate(req.body);
 console.log("Error" + error)
 if(error) {
-    return res.status(400).send(error);
+    return res.status(400).send({error: error});
 } 
 
 // check if user already exist or not
 let user = await User.findOne({email: req.body.email});
 if(user){
-    return res.status(400).send('User already exists');
+    return res.status(200).send({success: false,error: 'User already exists'});
 } else {
     // INSERT into db
     user = new User({
@@ -27,7 +27,7 @@ if(user){
     const salt = await bcrypt.genSalt(10); // generating a salt
     user.password = await bcrypt.hash(user.password, salt);// encrypting user password before saving it to db
     await user.save();
-    res.status(200).send(user);
+    res.status(200).send({success: false,user});
 }
 });
 

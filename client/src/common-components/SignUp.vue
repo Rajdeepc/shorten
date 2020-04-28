@@ -58,25 +58,35 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      // console.log(JSON.stringify(this.form));
-
-      // call save api
-      Service.registerUser(this.form)
-        .then(response => {
-          if (response) {
-            this.makeToast(true, "Registration Successful", "Success", true);
-          }
-        })
-        .catch(err => {
-          if (err) {
-            this.makeToast(true, "Registration Failed", "danger", false);
-          }
-        });
+      if ((this.form.email.length && this.form.username.length && this.form.password.length) > 5) {
+        Service.registerUser(this.form)
+          .then(response => {
+            if (response.status) {
+              this.makeToast(true, "Registration Successful. Please Log In", "Success", true);
+            } else {
+             this.makeToast(true, response.error, "Failed", false);
+            }
+          })
+          .catch(err => {
+            if (err) {
+              this.makeToast(true, "Registration Failed.Please Try Again", "danger", false);
+            }
+          });
+      } else {
+        this.makeToast(
+          true,
+          `Email Id should be min of 5 characters
+           User Name should be min of 5 characters
+           Password should be min of 5 alphaneumaric characters`,
+          "Registration Submission Failed",
+          false
+        );
+      }
     },
     makeToast(append = false, toastMsg, toastTitle, isSuccess) {
       this.$bvToast.toast(`${toastMsg}`, {
         title: toastTitle,
-        autoHideDelay: 2000,
+        autoHideDelay: 5000,
         appendToast: append,
         variant: isSuccess ? "success" : "danger"
       });

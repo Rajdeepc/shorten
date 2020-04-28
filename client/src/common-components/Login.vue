@@ -53,15 +53,17 @@ export default {
             }
             this.setSession(userSession);
             this.$router.push({ path: '/' })
-          }
+          } else {
+             this.makeToast(true, response.error, "Login Failed", false);
+            }
         })
         .catch(err => {
           if (err) {
-            this.makeToast(true, err, "Sign In Failed", false);
+            this.makeToast(true, err, "Login Failed", false);
           }
         });
       } catch(e) {
-        this.makeToast(true, e, "Sign In Failed", false);
+        this.makeToast(true, e, "Login Failed", false);
       }
     },
     setSession(userSessionObj){
