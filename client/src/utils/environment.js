@@ -29,10 +29,10 @@ const getEnvironMentConfig = (env) => {
       url = Environments[env].url + ":" + Environments[env].port;
       break;
     case "itg":
-      url = Environments[env].url + ":" + Environments[env].port;
+      url = Environments[env].url;
       break;
     case "production":
-      url = Environments[env].url + ":" + Environments[env].port;
+      url = Environments[env].url;
       break;
     default:
       url = "";
