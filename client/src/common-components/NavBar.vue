@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable type="dark" variant="dark">
-    <b-navbar-brand to="/">Url Shortener</b-navbar-brand>
+    <b-navbar-brand to="/"><img :src="registraionImg" alt=""/> Url Shortener</b-navbar-brand>
     <b-navbar-nav class="ml-auto">
       <b-button-group v-show="!isLoggedIn">
         <b-button to="/registration" variant="primary">Sign In</b-button>
@@ -15,11 +15,14 @@
 </template>
 
 <script>
+import { registraionImg } from '../assets/images';
+
 export default {
   name: "Navbar",
   data() {
     return {
-      isLoggedIn: false
+      isLoggedIn: false,
+      registraionImg:registraionImg
     };
   },
   mounted(){
@@ -43,5 +46,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.navbar-brand {
+  img {
+    width: 30px;
+    margin-right: 5px;
+}
+}
 </style>

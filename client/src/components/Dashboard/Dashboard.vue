@@ -33,13 +33,13 @@
       <div>
         <ShareComponent :url="shortUri" />
       </div>
-      <div class="premium-features text-center" v-show="!hasPremium">
+      <!-- <div class="premium-features text-center" v-show="!hasPremium">
         <div>
           <h2>Want More? Try Premium Features!</h2>
         </div>
         <p>Custom short links, API, UTM builder, QR codes .Only $9/month.</p>
         <b-button variant="primary">Get Premium</b-button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

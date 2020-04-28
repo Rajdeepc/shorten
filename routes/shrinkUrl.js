@@ -18,11 +18,8 @@ if(url){
         createdAt: Date.now(),
         clicks: req.body.clicks
     });
-    if(req.body.email){
-        await shrinkUrl.save();
-    } 
+    await shrinkUrl.save();
     res.status(200).send({ shrinkUrl: shrinkUrl,success: true});
-    
 }
 });
 
