@@ -84,3 +84,6 @@ Please follow the [Contributing](./github/CONTRIBUTING.md) guidelines to open a 
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](./github/LICENSE.md) file for details
+
+### Become a Patreon
+Made for developers and designers by Rajdeep Chandra. Tip me on [Patreon](https://www.patreon.com/chandraraj).
