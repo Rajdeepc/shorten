@@ -1,5 +1,7 @@
 ## Scalable URL Shortener Web Application
 
+![Dashboard Page](./github/urldash.png)
+
 A full E2E application to shorten your urls and save it on your profile. It gives you flexibity to choose your domain names, or build custom urls in paid version. The trial is free to use and you canshorten unlimited number of urls.
 
 ### See It Live
@@ -76,8 +78,7 @@ Please follow the [Contributing](./github/CONTRIBUTING.md) guidelines to open a 
 ## Login Page
 ![Home Page](./github/loginurlpng.png)
 
-## Dashboard Page
-![Dashboard Page](./github/urldash.png)
+
 
 
 
