@@ -1,8 +1,23 @@
-## Scalable URL Shortener Web Application
+# URL Web Application
+
+<div align="center">
+  <a href="https://razorurl.herokuapp.com/"><img src="./github/logo.png" alt="Razorurl logo"></a>
+  <br>
+  <br>
+  <p>
+    <b>Scalable URL Shortener Web Application</b>
+  </p>
+   <p>
+    <sub>Built with ❤︎ by
+      <a href="https://github.com/Rajdeepc">Rajdeep Chandra</a> 
+    </sub>
+  </p>
+</div>
+
+---
+## A full E2E application to shorten your urls and save it on your profile. It gives you flexibity to choose your domain names, or build custom urls in paid version. The trial is free to use and you can shorten unlimited number of urls.
 
 ![Dashboard Page](./github/urldash.png)
-
-A full E2E application to shorten your urls and save it on your profile. It gives you flexibity to choose your domain names, or build custom urls in paid version. The trial is free to use and you canshorten unlimited number of urls.
 
 ### See It Live
 [Working Demo](https://razorurl.herokuapp.com/)
