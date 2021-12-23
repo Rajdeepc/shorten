@@ -43,7 +43,8 @@ app.get("/:shortUrl", async (req, res) => {
 
 // MongoDB connection string
 
-const url = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.6xcsh.mongodb.net/urlshortener?retryWrites=true&w=majority`;
+const MONGO_DB_URI = process.env.MONGO_DB_URI;
+const url = MONGO_DB_URI;
 
 const connectionParams = {
   useNewUrlParser: true,
